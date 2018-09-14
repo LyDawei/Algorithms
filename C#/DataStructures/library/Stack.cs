@@ -2,11 +2,19 @@ using System;
 
 namespace DataStructures
 {
+    /// <summary>
+    /// Generic stack datastructure
+    /// </summary>
+    /// <typeparam name="T">DataType</typeparam>
     public class Stack<T>
     {
         private int _capacity;
         private int _top = -1; // Top of the stack.
 
+        /// <summary>
+        /// Retrieves size of the stack.
+        /// </summary>
+        /// <value></value>
         public int Size
         {
             get
@@ -19,6 +27,10 @@ namespace DataStructures
             }
         }
 
+        /// <summary>
+        /// Returns top element of the stack.
+        /// </summary>
+        /// <value></value>
         public T Top
         {
             get
@@ -32,11 +44,20 @@ namespace DataStructures
         }
         private T[] _stack; // Stack
 
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        /// <param name="capacity">Maximum number of elements stack can hold.</param>
         public Stack(int capacity = 10)
         {
             this._capacity = capacity;
             _stack = new T[this._capacity];
         }
+
+        /// <summary>
+        /// Accepts array to convert into stack.
+        /// </summary>
+        /// <param name="collection"></param>
         public Stack(T[] collection)
         {
             this._capacity = collection.Length;
@@ -54,6 +75,10 @@ namespace DataStructures
             return _top == this._capacity - 1;
         }
 
+        /// <summary>
+        /// Adds argument to the stack.
+        /// </summary>
+        /// <param name="data"></param>
         public void Push(T data)
         {
             if (this.IsFull())
@@ -62,6 +87,9 @@ namespace DataStructures
             _stack[++_top] = data;
         }
 
+        /// <summary>
+        /// Removes top-most element from stack.
+        /// </summary>
         public void Pop()
         {
             if (_top == -1)
