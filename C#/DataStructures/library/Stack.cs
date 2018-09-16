@@ -1,6 +1,6 @@
 using System;
 
-namespace DataStructures
+namespace DataStructures.library
 {
     /// <summary>
     /// Generic stack datastructure

@@ -4,11 +4,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace DataStructures.test
 {
     [TestClass]
+    [TestCategory("DataStructure - Stack")]
     public class StackUnitTests
     {
         [TestMethod]
         public void Test_StackPush()
         {
+            Console.WriteLine("Push Test");
             var myStack = new Stack<int>();
             myStack.Push(5);
             Console.WriteLine(myStack.Size);
@@ -47,8 +49,5 @@ namespace DataStructures.test
             var myStack = new Stack<string>(collection);
             Assert.ThrowsException<Exception>(() => myStack.Push("Blow up!"));
         }
-
-
-
     }
 }
